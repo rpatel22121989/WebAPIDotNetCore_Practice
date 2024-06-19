@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Channel Name - Lead Supplier API</title>
+    <style>
+        body {
+            max-width: 790px;
+            /*A4 Page Size*/
+            margin: 0px;
+            padding: 5px;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 10px 0;
+            background: #FFFFFF;
+        }
+
+        p {
+            text-align: justify;
+            margin: 0 0 10px 0;
+        }
+
+        table {
+            border: 1px solid grey;
+            /*border-radius: 10px;*/
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        thead {
+            font-weight: bold;
+        }
+
+        th {
+            border: 1px solid grey;
+        }
+
+        tr > th:nth-child(2),
+        tr > td:nth-child(2) {
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid grey;
+        }
+
+        pre {
+            background-color: lightgray;
+            padding: 2px;
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Introduction</h2>
+    <p>
+        This document is intended to help the external lead suppliers to supply leads without any issue or confusion.
+        This document explains lead posting method and example containing sample request and response along with code to
+        help the lead suppliers. This information is subject to change without notice. This document contains
+        confidential and proprietary business information. Any use or distribution not expressly allowed by the
+        confidentiality agreement is strictly prohibited.
+    </p>
+    <h2>Overview</h2>
+    <h3>Method</h3>
+    <p>
+        Leadstream accepts leads through the HTTP POST method. Lead generators are requested to send leads via HTTP POST
+        to the URL specified in the Leads Specifications section.
+    </p>
+    <h3>Format / Data Type</h3>
+    <p>
+        This API contains required and optional both type of fields. If the required field is not supplied or the field
+        contains blank or null value, then this API will not accept the lead. <strong>
+            Lead data can be sent in the
+            request in any order, but
+            all of the field names are case sensitive and must match examples in the specifications.
+        </strong>
+    </p>
+    <h2>Channel Name Fields</h2>
+    <h3>API URL:</h3>
+    <pre>https://dev-thirdpartyleadsubmission.azurewebsites.net/api/lead</pre>
+    <br />
+    <br />
+    <table cellpadding="2px">
+        <thead>
+            <tr>
+                <th style="width: 100px;">Field Name</th>
+                <th style="width: 50px;">Required</th>
+                <th style="width: 250px;">Description</th>
+                <th style="width: 175px;">Format</th>
+                <th style="width: 175px;">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Address1</td>
+                <td>NO</td>
+                <td>Address1</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId1</td>
+                <td>NO</td>
+                <td>AffiliateId1</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId2</td>
+                <td>NO</td>
+                <td>AffiliateId2</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId3</td>
+                <td>NO</td>
+                <td>AffiliateId3</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId4</td>
+                <td>NO</td>
+                <td>AffiliateId4</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId5</td>
+                <td>NO</td>
+                <td>AffiliateId5</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId6</td>
+                <td>NO</td>
+                <td>AffiliateId6</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId7</td>
+                <td>NO</td>
+                <td>AffiliateId7</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId8</td>
+                <td>NO</td>
+                <td>AffiliateId8</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId9</td>
+                <td>NO</td>
+                <td>AffiliateId9</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>AffiliateId10</td>
+                <td>NO</td>
+                <td>AffiliateId10</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>clickid</td>
+                <td>NO</td>
+                <td>Click Id value</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ChannelId</td>
+                <td>YES</td>
+                <td>Channel Id value</td>
+                <td>Numeric</td>
+                <td>##CHANNELID##</td>
+            </tr>
+            <tr>
+                <td>DateOfBirth</td>
+                <td>YES</td>
+                <td>Date of Birth of the customer</td>
+                <td>YYYY-MM-DD</td>
+                <td>1980-05-26</td>
+            </tr>
+            <tr>
+                <td>ElectricityBillPerMonth</td>
+                <td>NO</td>
+                <td>Electricity Bill Per Month</td>
+                <td>One of the following [&#163;0-&#163;199, &#163;200-&#163;399, &#163;400-&#163;599, over &#163;600]</td>
+                <td>&#163;0-&#163;199</td>
+            </tr>
+            <tr>
+                <td>AverageElectricityBill</td>
+                <td>NO</td>
+                <td>Average Electricity Bill</td>
+                <td>String</td>
+                <td>&#163;105.55</td>
+            </tr>
+            <tr>
+                <td>NumberOfBedrooms</td>
+                <td>NO</td>
+                <td>Number Of Bedrooms</td>
+                <td>One of the following [2 bedrooms, 3 bedrooms, 4 bedrooms, more than 4]</td>
+                <td>2 bedrooms</td>
+            </tr>
+            <tr>
+                <td>EmailAddress</td>
+                <td>YES</td>
+                <td>Email address of the customer</td>
+                <td>Valid email address Length 5-100</td>
+                <td>John@yahoo.com</td>
+            </tr>
+            <tr>
+                <td>FirstName</td>
+                <td>YES</td>
+                <td>First name of the customer</td>
+                <td>String Length 2-50</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <td>Homeowner</td>
+                <td>YES</td>
+                <td>Home Owner</td>
+                <td>Boolean [true, false]</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>IpAddress</td>
+                <td>NO</td>
+                <td>IP Address</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>IsConservationArea</td>
+                <td>YES</td>
+                <td>Is Conservation Area</td>
+                <td>One of the following [yes, no]</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td>YES</td>
+                <td>Last name of the customer</td>
+                <td>String Length 2-50</td>
+                <td>Green</td>
+            </tr>
+            <!--<tr>
+                <td>LeadTypeId</td>
+                <td>YES</td>
+                <td>Lead Type Id value</td>
+                <td>Numeric</td>
+                <td>##LEADTYPEID##</td>
+            </tr>-->
+            <tr>
+                <td>MarketingMedium</td>
+                <td>NO</td>
+                <td>Marketing Medium</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MarketingPermission</td>
+                <td>YES</td>
+                <td>Marketing Permission</td>
+                <td>Boolean</td>
+                <td>true (compulsory)</td>
+            </tr>
+            <tr>
+                <td>MarketingSource</td>
+                <td>NO</td>
+                <td>Marketing Source</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MarketingTerm</td>
+                <td>NO</td>
+                <td>Marketing Term</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>YES</td>
+                <td>phone number of the customer</td>
+                <td>Valid UK phone number Length 11</td>
+                <td>07789989898</td>
+            </tr>
+            <tr>
+                <td>Postcode</td>
+                <td>YES</td>
+                <td>Postcode of the customer</td>
+                <td>Valid UK Postcode</td>
+                <td>EN11 8UR</td>
+            </tr>
+            <!--<tr>
+                <td>SupplierId</td>
+                <td>YES</td>
+                <td>Supplier Id value</td>
+                <td>Numeric</td>
+                <td>##SUPPLIERID##</td>
+            </tr>-->
+            <tr>
+                <td>SupplierKey</td>
+                <td>YES</td>
+                <td>Supplier key provided to you by your Zuru Media contact.</td>
+                <td>String</td>
+                <td>##SUPPLIERKEY##</td>
+            </tr>
+            <tr>
+                <td>Town</td>
+                <td>NO</td>
+                <td>Town of the customer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>WebsiteId</td>
+                <td>YES</td>
+                <td>Website Id value</td>
+                <td>Numeric</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>MaritalStatus</td>
+                <td>NO</td>
+                <td>Marital Status</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SolarPanelInstalled</td>
+                <td>YES</td>
+                <td>Solar Panel Installed</td>
+                <td>One of the following [yes, no]</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>SolarProducts</td>
+                <td>YES</td>
+                <td>Solar Products</td>
+                <td>One of the following [solarPanels, solarBatteries, solarPanelsBatteries]</td>
+                <td>solarPanels</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <h2>Request Post Data Sample</h2>
+    <div>
+        <pre>
+             {
+                 Address1: '',
+                 AffiliateId1: '',
+                 AffiliateId2: '',
+                 AffiliateId3: '',
+                 AffiliateId4: '',
+                 AffiliateId5: '',
+                 AffiliateId6: '',
+                 AffiliateId7: '',
+                 AffiliateId8: '',
+                 AffiliateId9: '',
+                 AffiliateId10:  '',
+                 clickid: '',
+                 ChannelId: '##CHANNELID##',
+                 DateOfBirth: '1980-05-26',
+                 ElectricityBillPerMonth: '&#163;0-&#163;199',
+                 AverageElectricityBill: '&#163;105.55',
+                 numberOfBedrooms: '2 bedrooms',
+                 EmailAddress: 'John@yahoo.com',
+                 FirstName: 'John',
+                 Homeowner: true,
+                 IpAddress: '',
+                 IsConservationArea: 'yes',
+                 LastName: 'Green',
+                 MarketingMedium: '',
+                 MarketingPermission: true,
+                 MarketingSource: '',
+                 MarketingTerm: '',
+                 Phone: '07789989898',
+                 Postcode: 'EN11 8UR',
+                 SupplierKey: '##SUPPLIERKEY##',
+                 Town: '',
+                 WebsiteId: 13,
+                 MaritalStatus: '',
+                 SolarPanelInstalled: 'yes',
+                 SolarProducts: 'solarPanels'
+             }
+        </pre>
+    </div>
+    <br />
+    <br />
+    <h2>Response Sample</h2>
+    <h3>Lead Accepted</h3>
+    <div>
+        Status: 200
+        <pre>
+            {
+                statusCode: 200,
+                leadId: 3271059,
+                lc: false,
+                errors: null
+            }
+        </pre>
+    </div>
+    <h3>Lead Rejected</h3>
+    <div>
+        Status: 422
+        <pre>
+           {
+                "errors": 
+                [
+                    {
+                        "field": "FirstName",
+                        "message": "Please enter a valid name"
+                    }
+                ]
+           }
+        </pre>
+    </div>
+    <!--<h2>Error</h2>
+    <div>
+        Status: 422
+        <pre>
+           {
+                "errors":
+                [
+                    {
+                        "field": "FirstName",
+                        "message": "Please enter a valid name"
+                    }
+                ]
+           }
+        </pre>
+    </div>-->
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    max-width: 790px;
+    /*A4 Page Size*/
+    margin: 0px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+    border: 1px solid grey;
+    border-radius: 10px;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    font-weight: bold;
+}
+
+th {
+    border: 1px solid grey;
+}
+
+tr>th:nth-child(2),
+tr>td:nth-child(2) {
+    text-align: center;
+}
+
+td {
+    border: 1px solid grey;
+}

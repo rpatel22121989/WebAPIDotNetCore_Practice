@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Channel Name - Lead Supplier API</title>
+    <style>
+        body {
+            max-width: 790px;
+            /*A4 Page Size*/
+            margin: 0px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        table {
+            border: 1px solid grey;
+            border-radius: 10px;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        thead {
+            font-weight: bold;
+        }
+
+        th {
+            border: 1px solid grey;
+        }
+
+        tr > th:nth-child(2),
+        tr > td:nth-child(2) {
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Introduction</h1>
+    <p>
+        This document is intended to help the external lead suppliers to supply leads without any issue or confusion.
+        This document explains lead posting method and example containing sample request and response along with code to
+        help the lead suppliers. This information is subject to change without notice. This document contains
+        confidential and proprietary business information. Any use or distribution not expressly allowed by the
+        confidentiality agreement is strictly prohibited.
+    </p>
+    <h1>Overview</h1>
+    <h2>Method</h2>
+    <p>
+        Leadstream accepts leads through the HTTP POST method. Lead generators are requested to send leads via HTTP POST
+        to the URL specified in the Leads Specifications section.
+    </p>
+    <h2>Format / Data Type</h2>
+    <p>
+        This API contains required and optional both type of fields. If the required field is not supplied or the field
+        contains blank or null value, then this API will not accept the lead. <strong>Lead data can be sent in the
+            request in any order, but
+            all of the field names are case sensitive and must match examples in the specifications.</strong>
+    </p>
+    <h1>Channel Name Fields</h1>
+    <h2>API URL:</h2>
+    <pre>https://portal.leadstream.com/API Path</pre>
+    <table cellpadding="5px">
+        <thead>
+            <tr>
+                <th style="width: 100px;">Field Name</th>
+                <th style="width: 50px;">Reqired</th>
+                <th style="width: 250px;">Description</th>
+                <th style="width: 175px;">Format</th>
+                <th style="width: 175px;">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SupplierKey</td>
+                <td>YES</td>
+                <td></td>
+                <td>String</td>
+                <td>GUID</td>
+            </tr>
+            <tr>
+                <td>FirstName</td>
+                <td>YES</td>
+                <td>First name of the customer</td>
+                <td>String Length 2-50</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td>YES</td>
+                <td>Last name of the customer</td>
+                <td>String Length 2-50</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>EmailAddress</td>
+                <td>YES</td>
+                <td>Email address of the customer</td>
+                <td>Valid email address Length 5-100</td>
+                <td>John@yahoo.com</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>YES</td>
+                <td>phone number of the customer</td>
+                <td>Valid UK phone number Length 11</td>
+                <td>07789989898</td>
+            </tr>
+            <tr>
+                <td>Postcode</td>
+                <td>YES</td>
+                <td>Postcode of the customer</td>
+                <td>Valid UK Postcode</td>
+                <td>EN11 8UR</td>
+            </tr>
+            <tr>
+                <td>DateOfBirth</td>
+                <td>YES</td>
+                <td>DateOfBirth of the customer</td>
+                <td>YYYY-MM-DD</td>
+                <td>1980-05-26</td>
+            </tr>
+            <tr>
+                <td>SupplierKey</td>
+                <td>YES</td>
+                <td>Supplier key provided to you by your Zuru Media contact.</td>
+                <td>String</td>
+                <td>dc7c2fab-abff-499b-960311336d55553d</td>
+            </tr>
+            <tr>
+                <td>ChannelId</td>
+                <td>YES</td>
+                <td>ChannelId Value</td>
+                <td>Numeric</td>
+                <td>2042</td>
+            </tr>
+            <tr>
+                <td>MarketingPermission</td>
+                <td>YES</td>
+                <td>MarketingPermission allowed</td>
+                <td>Boolean [True/False]</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>NumberOfBedrooms</td>
+                <td>YES</td>
+                <td>Number Of Bedrooms</td>
+                <td>One of the following [2 bedrooms, 3 bedrooms, 4 bedrooms, more than 4]</td>
+                <td>2 bedrooms</td>
+            </tr>
+            <tr>
+                <td>ElectricityBillPerMonth</td>
+                <td>NO</td>
+                <td>Electricity Bill Per Month</td>
+                <td>One of the following [£0-£199, £200-£399, £400-£599, over £600]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>IsConservationArea</td>
+                <td>YES</td>
+                <td>Is Conservation Area</td>
+                <td>One of the following [yes, no]</td>
+                <td>yes</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Sample Code</h1>
+    <code>{"name":"my name"}</code>
+    <code>
+        body {
+            color: yellow;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        const numbers = [102, -1, 2];
+        numbers.sort((a, b) => a - b);
+        console.log(numbers);
+    </code>
+    <h1>Response Sample</h1>
+    <h2>Lead Accepted</h2>
+    <h2>Lead Rejected</h2>
+    <h2>Error</h2>
+</body>
+
+</html>
